@@ -1,0 +1,11 @@
+{
+  "name": "pdf-to-word",
+  "version": "1.0.0",
+  "description": "PDF to Word converter (local)",
+  "private": true,
+  "dependencies": {
+    "docx": "^9.7.1",
+    "pdfjs-dist": "^4.10.38",
+    "tesseract.js": "^7.0.0"
+  }
+}

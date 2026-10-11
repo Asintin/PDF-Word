@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PDF 转 Word</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>PDF <span>转</span> Word</h1>
+      <p class="sub">本地转换 · 文件不会上传到网络 · 支持文字版与扫描版 PDF</p>
+    </header>
+
+    <div id="dropZone" class="drop-zone">
+      <div class="dz-icon">📄</div>
+      <p class="dz-title">把 PDF 文件拖到这里</p>
+      <p class="dz-hint">或点击选择文件（可多选）</p>
+      <input type="file" id="fileInput" accept=".pdf,application/pdf" multiple hidden />
+      <button id="selectBtn" class="btn-secondary">选择文件</button>
+    </div>
+
+    <div class="options">
+      <label>
+        识别语言：
+        <select id="langSelect">
+          <option value="auto">自动（中文+英文）</option>
+          <option value="chi_sim">中文（简体）</option>
+          <option value="eng">英文</option>
+        </select>
+      </label>
+      <span class="note">扫描件将自动进行 OCR 识别并校正方向</span>
+    </div>
+
+    <div id="fileList" class="file-list"></div>
+
+    <div id="progress" class="progress hidden">
+      <div class="progress-bar"><div id="progressFill" class="progress-fill"></div></div>
+      <p id="progressText" class="progress-text">正在转换…</p>
+    </div>
+
+    <div id="results" class="results"></div>
+  </div>
+
+  <footer>
+    <p>转换结果与原 PDF 保存在同一文件夹，文件名带「_转换」后缀</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
